@@ -22,17 +22,13 @@ module.exports = {
   module: {
     preLoaders: [],
     loaders: [
-      {
-        test: /.*\.js$/,
-        loader: 'ng-annotate'
-      },
+      { test: /\.css$/,  loader: "style-loader!css-loader" },
+      { test: /.*\.js$/, loader: 'ng-annotate' },
+      { test: /\.html$/, loader: 'raw' },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
         loader: 'file',
-      }, {
-        test: /\.html$/,
-        loader: 'raw',
-      }
+      },
     ]
   },
 

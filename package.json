@@ -20,15 +20,18 @@
   "homepage": "https://github.com/taylor1791/sample-app#readme",
   "devDependencies": {
     "copy-webpack-plugin": "^1.1.1",
+    "css-loader": "^0.23.1",
     "html-webpack-plugin": "^2.9.0",
     "ng-annotate-loader": "^0.1.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
+    "style-loader": "^0.13.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "angular": "^1.5.0",
-    "angular-ui-router": "^0.2.18"
+    "angular-ui-router": "^0.2.18",
+    "normalize.css": "^3.0.3"
   }
 }

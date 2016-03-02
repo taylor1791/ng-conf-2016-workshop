@@ -1,6 +1,8 @@
 var angular = require('angular');
 var DINO_MAIL = 'dino.mail'
 
+require('normalize.css/normalize.css');
+
 angular.module(DINO_MAIL, [
     require('angular-ui-router')
   ])
