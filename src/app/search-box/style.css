@@ -1,0 +1,21 @@
+.searchBox {
+  display: flex;
+}
+
+.searchInput {
+  border: 1px solid #cdcdcd;
+  height: 30px;
+  padding: 0 8px;
+  flex-grow: 1;
+  max-width: 575px
+}
+
+.searchButton {
+  color: #fff;
+  height: 30px;
+  background: #4387fd;
+  border: 1px solid #4683ea;
+  border-radius: 0 2px 2px 0;
+  width: 60px;
+}
+

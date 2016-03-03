@@ -10,3 +10,13 @@
   background-position: center;
   width: 200px;
 }
+
+.omnibarContainer {
+  margin: 15px 0;
+  flex-grow: 1;
+}
+
+.accountContainer {
+  width: 200px;
+}
+
