@@ -34,9 +34,9 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/public/index.html',
+      template: './src/assets/index.html',
       title: 'Dino-Mail',
-      favicon: './src/public/img/favicon.ico',
+      favicon: './src/assets/img/favicon.ico',
       inject: 'body'
     })
   ],
