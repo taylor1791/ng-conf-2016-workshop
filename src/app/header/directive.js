@@ -1,3 +1,5 @@
+require('./style.css');
+
 // @ngInject
 module.exports = function() {
   return {
