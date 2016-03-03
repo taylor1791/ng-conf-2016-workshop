@@ -1,7 +1,7 @@
 {
   "name": "sample-app",
   "version": "0.0.0",
-  "description": "",
+  "description": "A Gmail clone implemented in AngularJS.",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
