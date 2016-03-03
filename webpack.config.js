@@ -35,12 +35,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/public/index.html',
+      title: 'Dino-Mail',
+      favicon: './src/public/img/favicon.ico',
       inject: 'body'
     })
   ],
 
   devServer: {
-    contentBase: './src/public',
     stats: 'minimal'
   }
 };
@@ -50,10 +51,7 @@ if (ENV === 'build') {
   module.exports.plugins.push(
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
-    new CopyWebpackPlugin([{
-      from: __dirname + '/src/public'
-    }])
+    new webpack.optimize.UglifyJsPlugin()
   )
 }
 

@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/taylor1791/sample-app#readme",
   "devDependencies": {
-    "copy-webpack-plugin": "^1.1.1",
     "css-loader": "^0.23.1",
     "html-webpack-plugin": "^2.9.0",
     "ng-annotate-loader": "^0.1.0",
