@@ -4,11 +4,14 @@ module.exports = function($stateProvider, $urlRouterProvider) {
     .state('root', {
       abstract: true,
       url: '/',
-      template: '<ui-view></ui-view>'
+      template: '<dm-layout></dm-layout>',
     })
     .state('root.inbox', {
       url: 'inbox',
-      template: 'A clean inbox; some people never see this!'
+      views: {
+        header: {template: '<dm-header></dm-header>'},
+        '': {template: 'A clean inbox; some people never see this!'},
+      }
     });
 
   $urlRouterProvider

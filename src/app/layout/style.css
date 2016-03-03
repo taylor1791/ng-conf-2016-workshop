@@ -1,0 +1,14 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.appHeaderContainer {
+  height: 60px;
+  background: #f1f1f1;
+  border: 1px solid #E5E5E5;
+}
+
+.appBodyContainer {
+  height: calc(100% - 60px);
+}
