@@ -11,4 +11,5 @@
 
 .appBodyContainer {
   height: calc(100% - 60px);
+  font-size: 1.3rem;
 }
