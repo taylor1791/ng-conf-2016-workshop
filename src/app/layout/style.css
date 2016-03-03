@@ -4,9 +4,9 @@
 }
 
 .appHeaderContainer {
-  height: 60px;
+  height: 61px;
   background: #f1f1f1;
-  border: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
 }
 
 .appBodyContainer {
