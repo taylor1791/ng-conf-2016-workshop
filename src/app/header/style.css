@@ -11,12 +11,33 @@
   width: 200px;
 }
 
+.omnibarContainer, .accountContainer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .omnibarContainer {
-  margin: 15px 0;
   flex-grow: 1;
 }
 
 .accountContainer {
+  margin-left: 30px;
+  margin-right: 30px;
   width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profileName {
+  color: #777;
+  line-height: 30px;
+  max-width: 140px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.profileImage {
+  width: 30px;
+  height: 30px;
 }
 
