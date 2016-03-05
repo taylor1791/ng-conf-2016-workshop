@@ -1,0 +1,41 @@
+.mailboxHeader {
+  display: flex;
+  height: 100%;
+}
+
+.quickActions {
+  width: 200px;
+  display: flex;
+  align-items: stretch;
+}
+
+.leftHeaderActions {
+  display: flex;
+  align-items: stretch;
+}
+
+.rightHeaderActions {
+  display: flex;
+  align-items: stretch;
+  margin-right: 30px;
+}
+
+.headerActions {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pageArrow {
+  width: 30px;
+}
+
+.mailActions {
+  margin-left: 16px;
+  display: flex;
+}
+
+.manageMailActions {
+  margin-left: 16px;
+  display: flex;
+}

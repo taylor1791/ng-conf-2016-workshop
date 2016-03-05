@@ -7,13 +7,22 @@ module.exports = function($stateProvider, $urlRouterProvider) {
       template: '<dm-layout></dm-layout>',
     })
     .state('root.mailbox', {
+      abstract: true,
       url: '/mailbox',
       views: {
         header: {template: '<dm-header></dm-header>'},
+        '': {template: '<dm-mailbox-layout></dm-mailbox-layout>'},
+      }
+    })
+    .state('root.mailbox.inbox', {
+      url: '/inbox',
+      views: {
+        pageHeader: {template: '<dm-mailbox-header></dm-mailbox-heder>'},
+        '': {template: 'A clean inbox; some people never see this!'},
       }
     });
 
   $urlRouterProvider
-    .otherwise('/mailbox');
+    .otherwise('/mailbox/inbox');
 }
 

@@ -1,0 +1,43 @@
+dm-button {
+  display: flex;
+}
+
+.dmButton {
+  background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+  border: 1px solid #dcdcdc;
+  color: #444;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100%;
+  white-space: nowrap;
+  min-width: 70px;
+}
+
+.dmButton:hover {
+  background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 1px 0px;
+  border-color: #c6c6c6;
+}
+
+.dmButton:active {
+  background-image: -webkit-linear-gradient(top, #eeeeee, #e0e0e0);
+  border-color: #cccccc;
+}
+
+.dmButton_left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.dmButton_right {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left-width: 0;
+}
+
+.dmButton_center {
+  border-radius: 0;
+  border-left-width: 0;
+}
+
