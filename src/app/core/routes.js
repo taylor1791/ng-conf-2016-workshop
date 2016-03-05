@@ -3,18 +3,17 @@ module.exports = function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('root', {
       abstract: true,
-      url: '/',
+      url: '',
       template: '<dm-layout></dm-layout>',
     })
-    .state('root.inbox', {
-      url: 'inbox',
+    .state('root.mailbox', {
+      url: '/mailbox',
       views: {
         header: {template: '<dm-header></dm-header>'},
-        '': {template: 'A clean inbox; some people never see this!'},
       }
     });
 
   $urlRouterProvider
-    .otherwise('/inbox');
+    .otherwise('/mailbox');
 }
 
