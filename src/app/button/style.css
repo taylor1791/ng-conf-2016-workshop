@@ -41,3 +41,17 @@ dm-button {
   border-left-width: 0;
 }
 
+.dmButton_primary {
+  text-transform: uppercase;
+  min-width: 115px;
+  border: 1px solid #dd4b39;
+  background-image: -webkit-linear-gradient(top,#dd4b39,#d14836);
+  color: #fff
+}
+
+.dmButton_primary:hover {
+  background-image: -webkit-linear-gradient(top,#dd4b39,#c53727);
+  box-shadow: 0 1px 1px #cccccc;
+  border: 1px solid #b0281a;
+}
+

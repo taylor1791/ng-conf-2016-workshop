@@ -1,0 +1,33 @@
+.labelItem {
+  padding-left: 30px;
+  margin-top: 2px;
+}
+
+.activeLabel {
+  border-left: 4px solid #dd4b39;
+  padding-left: 26px;
+}
+
+.labelItem:hover {
+  background-color: #eeeeee;
+}
+
+.labelsContainer {
+  list-style-type: none;
+  padding: 0;
+}
+
+.unreadLabel {
+  font-weight: bold;
+}
+
+.activeLabel {
+  font-weight: bold;
+  color: #dd4b39;
+}
+
+.labelSeperator {
+  padding-bottom: 2px;
+  border-bottom: 1px solid #e5e5e5;
+}
+

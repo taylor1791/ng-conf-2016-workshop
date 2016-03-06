@@ -18,7 +18,7 @@ module.exports = function($stateProvider, $urlRouterProvider) {
       url: '/inbox',
       views: {
         pageHeader: {template: '<dm-mailbox-header></dm-mailbox-heder>'},
-        '': {template: 'A clean inbox; some people never see this!'},
+        '': {template: '<dm-mailbox></dm-mailbox>'},
       }
     });
 

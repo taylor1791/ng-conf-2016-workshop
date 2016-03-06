@@ -1,0 +1,20 @@
+.mailbox {
+  display: flex;
+}
+
+.mailboxLabels {
+  width: 184px;
+  margin: 10px 16px 10px 0;
+}
+
+.mailboxContents {
+  flex-grow: 1;
+}
+
+.composeContainer {
+  margin-left: 30px;
+  height: 2.7rem;
+  display: flex;
+  font-size: 1.1rem;
+}
+
