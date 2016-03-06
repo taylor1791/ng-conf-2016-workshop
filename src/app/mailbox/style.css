@@ -9,6 +9,8 @@
 
 .mailboxContents {
   flex-grow: 1;
+  margin-right: 28px;
+  max-width: calc(100% - 228px);
 }
 
 .composeContainer {
@@ -16,5 +18,12 @@
   height: 2.7rem;
   display: flex;
   font-size: 1.1rem;
+}
+
+.mailMessage {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 

@@ -1,0 +1,46 @@
+.mailItem {
+  display: flex;
+  padding: 5px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.mailSelect {
+  min-width: 30px;
+}
+
+.mailStar {
+  min-width: 25px;
+  text-align: center;
+}
+
+.mailFrom {
+  min-width: 200px;
+  max-width: 200px;
+  padding-left: 10px;
+  padding-right: 6px;
+}
+
+.mailContents {
+  padding-left: 16px;
+  padding-right: 25px;
+  flex-grow: 1;
+}
+
+.mailSubject {
+  font-weight: bold;
+}
+
+.mailBody {
+  color: #777777;
+}
+
+.mailSent {
+  width: 80px;
+}
+
+.mailOverflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
