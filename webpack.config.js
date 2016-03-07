@@ -42,6 +42,7 @@ module.exports = {
   ],
 
   devServer: {
+    contentBase: './src/public',
     stats: 'minimal'
   }
 };
@@ -49,6 +50,7 @@ module.exports = {
 // Add build specific plugins
 if (ENV === 'build') {
   module.exports.plugins.push(
+    new CopyWebpackPlugin([{ from: __dirname + '/src/public' }]),
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin()
