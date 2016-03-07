@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
-    "server": "webpack-dev-server --history-api-fallback --inline --progress",
-    "start": "npm run server"
+    "server": "npm run api & webpack-dev-server --history-api-fallback --inline --progress",
+    "start": "npm run server",
+    "api": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,11 +21,13 @@
   "homepage": "https://github.com/taylor1791/sample-app#readme",
   "devDependencies": {
     "css-loader": "^0.23.1",
+    "express": "^4.13.4",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.9.0",
     "ng-annotate-loader": "^0.1.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
+    "simple-fs-rest": "^1.0.5",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
@@ -35,3 +38,4 @@
     "normalize.css": "^3.0.3"
   }
 }
+
