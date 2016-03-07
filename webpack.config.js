@@ -5,16 +5,14 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
-var ENV = process.env.npm_lifecycle_event;
-
 module.exports = {
   entry: {app: './src/app/core/app.js'},
 
   output: {
     path: __dirname + '/dist',
-    publicPath: ENV === 'build' ? '' : 'http://localhost:8080/',
-    filename: ENV === 'build' ? '[name].[hash].js' : '[name].bundle.js',
-    chunkFilename: ENV === 'build' ? '[name].[hash].js' : '[name].bundle.js',
+    publicPath: 'http://localhost:8080/',
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
   },
 
   devtool: 'sourcemap',
@@ -22,7 +20,7 @@ module.exports = {
   module: {
     preLoaders: [],
     loaders: [
-      { test: /\.css$/,  loader: "style-loader!css-loader" },
+      { test: /\.css$/,  loader: 'style-loader!css-loader' },
       { test: /.*\.js$/, loader: 'ng-annotate' },
       { test: /\.html$/, loader: 'raw' },
       {
@@ -43,26 +41,13 @@ module.exports = {
 
   devServer: {
     contentBase: './src/public',
-    stats: 'minimal'
+    stats: 'minimal',
+    proxy: {
+      '/api/*': {
+        target: 'http://localhost:8081',
+        secure: false,
+      },
+    }
   }
 };
-
-// Add build specific plugins
-if (ENV === 'build') {
-  module.exports.plugins.push(
-    new CopyWebpackPlugin([{ from: __dirname + '/src/public' }]),
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin()
-  )
-}
-
-if (ENV !== 'build') {
-  module.exports.devServer.proxy = {
-    '/api/*': {
-      target: 'http://localhost:8081',
-      secure: false,
-    },
-  };
-}
 
