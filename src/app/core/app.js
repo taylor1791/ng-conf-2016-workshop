@@ -8,6 +8,7 @@ angular.module(DINO_MAIL, [
     require('angular-ui-router'),
     require('./routes.js'),
     require('./directives.js'),
+    require('./services.js'),
   ]);
 
 angular.element(document).ready(function() {

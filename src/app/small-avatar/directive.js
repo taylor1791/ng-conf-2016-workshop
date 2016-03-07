@@ -4,8 +4,13 @@ require('./style.css');
 module.exports = function() {
   return {
     restrict: 'E',
-    scope: {},
+    scope: {
+      imgSrc: '@',
+    },
     template: require('./template.html'),
+    controller: require('./controller.js'),
+    bindToController: true,
+    controllerAs: 'avatar',
   };
 }
 
