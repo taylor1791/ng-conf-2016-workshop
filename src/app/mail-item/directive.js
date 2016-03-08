@@ -4,8 +4,13 @@ require('./style.css');
 module.exports = function() {
   return {
     restrict: 'E',
-    scope: {},
+    scope: {
+      mail: '=',
+    },
     template: require('./template.html'),
+    controller: require('./controller.js'),
+    bindToController: true,
+    controllerAs: 'mailItem',
   };
 }
 

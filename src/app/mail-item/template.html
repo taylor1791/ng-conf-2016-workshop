@@ -1,12 +1,12 @@
 <div class="mailItem">
   <div class="mailSelect"> <input type="checkbox" /> </div>
   <div class="mailStar"> S </div>
-  <div class="mailFrom mailOverflow"> Taylor Everding </div>
+  <div class="mailFrom mailOverflow"> {{mailItem.mail.headers.from.name}} </div>
   <div class="mailContents mailOverflow"> 
-    <span class="mailSubject">Hello</span>
+    <span class="mailSubject">{{mailItem.mail.headers.subject}}</span>
     -
-    <span class="mailBody">I Love candy canes can you eat?</span>
+    <span class="mailBody">{{mailItem.mail.snippet}}</span>
   </div>
-  <div class="mailSent"> 7:40 pm </div>
+  <div class="mailSent"> {{mailItem.mail.headers.sentDate}} </div>
 </div>
 

@@ -6,6 +6,9 @@ module.exports = function() {
     restrict: 'E',
     scope: {},
     template: require('./template.html'),
+    controller: require('./controller.js'),
+    bindToController: true,
+    controllerAs: 'mailbox',
   };
 }
 
