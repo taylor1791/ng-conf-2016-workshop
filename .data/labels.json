@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "label": "inbox",
+    "estimatedUnread": 2,
+    "estimatedSize": 24
+  }, {
+    "id": 2,
+    "label": "starred",
+    "estimatedUnread": 0,
+    "estimatedSize": 3
+  }, {
+    "id": 3,
+    "label": "sent mail",
+    "estimatedUnread": 0,
+    "estimatedSize": 3
+  }, {
+    "id": 4,
+    "label": "drafts",
+    "estimatedUnread": 0,
+    "estimatedSize": 2
+  }, {
+    "id": 5,
+    "label": "all mail",
+    "estimatedUnread": 2,
+    "estimatedSize": 71
+  }, {
+    "id": 6,
+    "label": "reciepies",
+    "estimatedUnread": 0,
+    "estimatedSize": 32
+  }, {
+    "id": 7,
+    "label": "spam",
+    "estimatedUnread": 6,
+    "estimatedSize": 6
+  }, {
+    "id": 8,
+    "label": "trash",
+    "estimatedUnread": 85,
+    "estimatedSize": 128
+  }
+]

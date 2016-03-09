@@ -1,12 +1,27 @@
 <ul class="labelsContainer">
-  <li class="labelItem unreadLabel">Inbox (146)</li>
-  <li class="labelItem activeLabel">Starred</li>
-  <li class="labelItem">Sent Mail</li>
-  <li class="labelItem">Drafts</li>
-  <li class="labelItem">
-    <div class="labelSeperator">Less ^</div>
+  <li
+    class="labelItem"
+    ng-class="{unreadLabel: labelList.showUnread(label), activeLabel: 'inbox' === label.label}"
+    ng-repeat="label in labelList.top track by label.id">
+    {{label.label}}
+    <span ng-if="labelList.showUnread(label)">({{label.estimatedUnread}})</span>
   </li>
-  <li class="labelItem">Spam</li>
-  <li class="labelItem">Trash</li>
+  <li class="labelItem additionalLabels">
+    <div
+      ng-click="labelList.toggleBottom()"
+      ng-switch="labelList.showBottom"
+    >
+      <div ng-switch-when="false">More v</div>
+      <div class="labelSeperator" ng-switch-when="true">Less ^</span>
+    </div>
+  </li>
+  <li
+    ng-if="labelList.showBottom"
+    class="labelItem"
+    ng-class="{unreadLabel: labelList.showUnread(label)}"
+    ng-repeat="label in labelList.bottom track by label.id">
+    {{label.label}}
+    <span ng-if="labelList.showUnread(label)">({{label.estimatedUnread}})</span>
+  </li>
 </ul>
 

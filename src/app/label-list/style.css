@@ -1,6 +1,7 @@
 .labelItem {
   padding-left: 30px;
   margin-top: 2px;
+  text-transform: capitalize;
 }
 
 .activeLabel {
@@ -10,6 +11,14 @@
 
 .labelItem:hover {
   background-color: #eeeeee;
+}
+
+.additionalLabels {
+  cursor: pointer;
+}
+
+.additionalLabels:hover {
+  background-color: #ffffff;
 }
 
 .labelsContainer {
