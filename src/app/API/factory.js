@@ -15,7 +15,7 @@ module.exports= function($http) {
     },
 
     getInbox: function() {
-      return $http.get('/api/thread-list?labels=INBOX')
+      return $http.get('/api/thread-list?labels=inbox')
     },
   }
 };

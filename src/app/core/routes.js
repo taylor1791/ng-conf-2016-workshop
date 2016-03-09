@@ -25,7 +25,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $provide) {
       },
     })
     .state('root.mailbox.inbox', {
-      url: '/inbox',
+      url: '/inbox/:label?',
       views: {
         pageHeader: {template: '<dm-mailbox-header></dm-mailbox-heder>'},
         '': {template: '<dm-mailbox></dm-mailbox>'},
@@ -33,6 +33,6 @@ module.exports = function($stateProvider, $urlRouterProvider, $provide) {
     });
 
   $urlRouterProvider
-    .otherwise('/mailbox/inbox');
+    .otherwise('/mailbox/inbox/');
 }
 
