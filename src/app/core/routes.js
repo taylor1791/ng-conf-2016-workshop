@@ -28,6 +28,14 @@ module.exports = function($stateProvider, $urlRouterProvider, $provide) {
       params: {
         label: { value: 'inbox', squash: '' },
       },
+    })
+
+    .state('root.mail.compose', {
+      url: '/compose',
+      views: {
+        pageHeader: {template: 'Compose Header'},
+        '': {template: '<textarea>My Email</textarea>'},
+      },
     });
 
   $urlRouterProvider
