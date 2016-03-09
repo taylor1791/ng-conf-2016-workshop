@@ -1,10 +1,11 @@
 // @ngInject
-module.exports = function(API) {
+module.exports = function($stateParams, API) {
   var vm = this;
 
   vm.showBottom = false;
   vm.top = [];
   vm.bottom = [];
+  vm.activeLabel = $stateParams.label || 'inbox';
 
   API.getLabels().then(setLabels);
 

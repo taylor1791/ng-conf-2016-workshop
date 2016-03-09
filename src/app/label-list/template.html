@@ -1,11 +1,17 @@
 <ul class="labelsContainer">
   <li
     class="labelItem"
-    ng-class="{unreadLabel: labelList.showUnread(label), activeLabel: 'inbox' === label.label}"
+    ng-class="{
+      unreadLabel: labelList.showUnread(label),
+      activeLabel: labelList.activeLabel === label.label
+    }"
     ng-repeat="label in labelList.top track by label.id">
-    {{label.label}}
-    <span ng-if="labelList.showUnread(label)">({{label.estimatedUnread}})</span>
+    <a ui-sref="root.mailbox.inbox({label: label.label})">
+      {{label.label}}
+      <span ng-if="labelList.showUnread(label)">({{label.estimatedUnread}})</span>
+    </a>
   </li>
+
   <li class="labelItem additionalLabels">
     <div
       ng-click="labelList.toggleBottom()"
@@ -15,13 +21,16 @@
       <div class="labelSeperator" ng-switch-when="true">Less ^</span>
     </div>
   </li>
+
   <li
     ng-if="labelList.showBottom"
     class="labelItem"
     ng-class="{unreadLabel: labelList.showUnread(label)}"
     ng-repeat="label in labelList.bottom track by label.id">
-    {{label.label}}
-    <span ng-if="labelList.showUnread(label)">({{label.estimatedUnread}})</span>
+    <a ui-sref="root.mailbox.inbox({label: label.label})">
+      {{label.label}}
+      <span ng-if="labelList.showUnread(label)">({{label.estimatedUnread}})</span>
+    </a>
   </li>
 </ul>
 

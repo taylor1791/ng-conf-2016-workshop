@@ -29,7 +29,13 @@ module.exports = function($stateProvider, $urlRouterProvider, $provide) {
       views: {
         pageHeader: {template: '<dm-mailbox-header></dm-mailbox-heder>'},
         '': {template: '<dm-mailbox></dm-mailbox>'},
-      }
+      },
+      params: {
+        label: {
+          value: 'inbox',
+          squash: '',
+        },
+      },
     });
 
   $urlRouterProvider

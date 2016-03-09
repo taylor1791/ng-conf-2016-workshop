@@ -8,9 +8,9 @@
   </div>
 
   <div class="mailboxContents" ng-switch="mailbox.email.length">
-    <div class="mailMessage"> <a href>Empty Trash now</a> (old messages will be automatically deleted) </div>
-    <div class="mailMessage"> No starred messages. Have you tried hearts? </div>
-    <div class="mailMessage" ng-switch-when="0"> A clean inbox; some people never see this! </div>
+    <div class="mailMessage" ng-if="mailbox.showTrashMessage()"> <a href>Empty Trash now</a> (old messages will be automatically deleted) </div>
+    <div class="mailMessage" ng-if="mailbox.showStarredMessage()" ng-switch-when="0"> No starred messages. Have you tried hearts? </div>
+    <div class="mailMessage" ng-if="mailbox.showOtherMessage()" ng-switch-when="0"> A clean inbox; some people never see this! </div>
     <dm-mail-item
       ng-repeat="email in mailbox.email track by email.id"
       mail="email"

@@ -1,6 +1,6 @@
 // @ngInject
 module.exports= function($http) {
-  return {
+  var factory = {
     getUser: function() {
       return $http.get('/api/me');
     },
@@ -15,9 +15,15 @@ module.exports= function($http) {
     },
 
     getInbox: function() {
-      return $http.get('/api/thread-list?labels=inbox')
+      return factory.getLabel('inbox');
     },
-  }
+
+    getLabel: function(label) {
+      return $http.get('/api/thread-list?labels=' + label);
+    },
+  };
+
+  return factory;
 };
 
 var LABEL_PRIORITIES = {

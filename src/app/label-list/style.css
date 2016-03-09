@@ -4,6 +4,11 @@
   text-transform: capitalize;
 }
 
+.labelItem > a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .activeLabel {
   border-left: 4px solid #dd4b39;
   padding-left: 26px;
