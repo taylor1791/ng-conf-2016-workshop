@@ -4,3 +4,25 @@
   padding: 10px 0;
   font-size: 1.2rem;
 }
+
+.pageBody {
+  display: flex;
+}
+
+.mailboxLabels {
+  min-width: 184px;
+  margin: 10px 16px 10px 0;
+}
+
+.composeContainer {
+  margin-left: 30px;
+  height: 2.7rem;
+  display: flex;
+  font-size: 1.1rem;
+}
+
+.mailboxBody {
+  flex-grow: 1;
+  max-width: calc(100% - 200px);
+}
+

@@ -1,2 +1,12 @@
 <div class="pageHeader" ui-view="pageHeader"></div>
-<div class="pageBody" ui-view></div>
+<div class="pageBody">
+  <div class="mailboxLabels">
+    <div class="composeContainer">
+      <dm-button kind="primary"> Compose </dm-button>
+    </div>
+
+    <dm-label-list></dm-label-list>
+  </div>
+
+  <div class="mailboxBody" ui-view></div>
+</div>

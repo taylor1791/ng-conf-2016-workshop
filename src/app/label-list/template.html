@@ -6,7 +6,7 @@
       activeLabel: labelList.activeLabel === label.label
     }"
     ng-repeat="label in labelList.top track by label.id">
-    <a ui-sref="root.mailbox.inbox({label: label.label})">
+    <a ui-sref="root.mail.inbox({label: label.label})">
       {{label.label}}
       <span ng-if="labelList.showUnread(label)">({{label.estimatedUnread}})</span>
     </a>
@@ -27,7 +27,7 @@
     class="labelItem"
     ng-class="{unreadLabel: labelList.showUnread(label)}"
     ng-repeat="label in labelList.bottom track by label.id">
-    <a ui-sref="root.mailbox.inbox({label: label.label})">
+    <a ui-sref="root.mail.inbox({label: label.label})">
       {{label.label}}
       <span ng-if="labelList.showUnread(label)">({{label.estimatedUnread}})</span>
     </a>
