@@ -3,7 +3,7 @@
 }
 
 *:focus {
-  outline: 1px solid #4d90fe;
+  outline: none;
   position: relative; /* Make the outline above other elements */
 }
 
