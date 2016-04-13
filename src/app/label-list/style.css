@@ -8,7 +8,7 @@
 .labelItem > a {
   display: block;
   color: inherit;
-  padding-left: 15px;
+  padding: 1px 0 1px 15px;
   text-decoration: none;
   width: 100%;
 }
@@ -30,6 +30,10 @@
 
 .additionalLabels:hover {
   background-color: #ffffff;
+}
+
+.additionalLabelArrow {
+  font-size: 80%;
 }
 
 .labelsContainer {

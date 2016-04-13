@@ -17,8 +17,14 @@
       ng-click="labelList.toggleBottom()"
       ng-switch="labelList.showBottom"
     >
-      <div ng-switch-when="false">More v</div>
-      <div class="labelSeperator" ng-switch-when="true">Less ^</span>
+      <div ng-switch-when="false">
+        More
+        <span class="additionalLabelArrow">&#9660;</span>
+      </div>
+      <div class="labelSeperator" ng-switch-when="true">
+        Less
+        <span class="additionalLabelArrow">&#9650</span>
+      </div>
     </div>
   </li>
 
