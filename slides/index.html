@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+     <title>Isolating and Improving performance in Angular 1 Applications</title>
+       <style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.remark-slide-content h1 { font-size: 3em; }
+.remark-slide-content h2 { font-size: 2em; }
+.remark-slide-content h3 { font-size: 1.6em; }
+
+.footnote {
+  position: absolute;
+  bottom: 3em;
+}
+
+.twitter > img,
+.github > img {
+  height: 20px;
+  vertical-align: middle;
+}
+
+.patterns > img {
+  height: 500px;
+}
+
+.fullImage > img {
+  width: 755px;
+}
+
+.changelog > img {
+}
+
+.trackby > img {
+  width: 755px;
+}
+
+/* Two-column layout */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #000;
+}
+
+.right-column {
+  width: 75%;
+  float: right;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Isolating and Improving performance in Angular 1 Applications
+### Winning SPARS with Angular
+
+.footnote[
+  Taylor Everding
+  .github[![Github](../slides/img/github.png)] Taylor1791
+  .twitter[![Twitter](../slides/img/twitter.png)] @raisdead
+]
+
+???
+
+Raise your hand if you have worked on an angular 1 app.
+
+Keep your hand raised if you encountered front-end performance problems on an angular app?
+
+If you were at least partially responsible for fixing them.
+
+If you were at least a little nervous the first time you had to redress the problems.
+
+---
+
+.left-column[
+  ## Goals
+
+  ### Tips
+]
+.right-column[
+  ## `\(n\)` Weird Tricks to Improve your Performance that Really Work!
+  .weirdTrick[![Weird Tricks](img/one-weird-trick.jpg)]
+]
+
+???
+
+angular developer can take home and put in their application with minimal effort.
+
+---
+
+.left-column[
+  ## Goals
+
+  ### Tips
+  ### Dev Tools
+]
+.right-column[
+  ## Become Comfortable using JavaScript Profiler on Angular
+  .angularJavascript[![Angular is JavaScript](img/angular-javascript.jpg)]
+]
+
+???
+
+Angular is a powerful abstraction from JavaScript. But it is sill JavaScript.
+
+Everything we use debug performance in JavaScript still applies.
+
+---
+
+.left-column[
+  ## Goals
+
+  ### Tips
+  ### Dev Tools
+  ### Patterns
+]
+.right-column[
+  ## Identify Patterns that may Cause Performance Problems
+  .patterns[![Patters](img/illusion.jpg)]
+]
+
+???
+
+Lofty goal because you won't get one-on-one attention
+
+Later on Find and Identify
+
+After seeing examples of when performance arise, it makes it easier to identify future problems
+
+---
+
+.left-column[
+  ## Goals
+
+  ### Tips
+  ### Dev Tools
+  ### Patterns
+  ### Attitude
+]
+.right-column[
+  ### Develop a Performance Attitude
+  .attitude[![Performance Attitude](img/attitude.jpg)]
+]
+
+???
+
+Goal for me. Ultimately it is a choice of yours.
+
+Constant thought about how code works at scale.
+
+The best way to fix performance issues, is to prevent them
+
+Let's take care of the first goal
+
+---
+
+    </textarea>
+
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <script>
+      var slideshow = remark.create();
+
+      // Setup MathJax
+      MathJax.Hub.Config({
+        tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+      });
+
+      MathJax.Hub.Configured();
+    </script>
+    <script></script>
+  </body>
+</html>
+
