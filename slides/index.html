@@ -82,9 +82,9 @@ Raise your hand if you have worked on an angular 1 app.
 
 Keep your hand raised if you encountered front-end performance problems on an angular app?
 
-If you were at least partially responsible for fixing them.
-
 If you were at least a little nervous the first time you had to redress the problems.
+
+I was, I hope to give you the tools to address the issues without feeling the fear that I had.
 
 ---
 
@@ -100,7 +100,7 @@ If you were at least a little nervous the first time you had to redress the prob
 
 ???
 
-angular developer can take home and put in their application with minimal effort.
+Give you tips and tricks that anyone developers of all skill levels can take home and put in their application with minimal effort.
 
 ---
 
@@ -137,9 +137,7 @@ Everything we use debug performance in JavaScript still applies.
 
 ???
 
-Lofty goal because you won't get one-on-one attention
-
-Later on Find and Identify
+Later in workshop, identify and fix issues in a real application.
 
 After seeing examples of when performance arise, it makes it easier to identify future problems
 
@@ -160,16 +158,106 @@ After seeing examples of when performance arise, it makes it easier to identify 
 
 ???
 
-Goal for me. Ultimately it is a choice of yours.
 
 Constant thought about how code works at scale.
 
 The best way to fix performance issues, is to prevent them
 
+...
+
 Let's take care of the first goal
 
 ---
 
+## Simple Tricks 1: Always upgrade angular
+
+.fullImage[![Angular 1.5.5/1.5.1 Changelog](img/changelog.png)]
+
+???
+
+Angular team works hard to make angular as fast as possible
+
+Document performance improvements of every release in the change log.
+
+May not understand, but you don't have too!
+
+---
+
+## Simple Tricks 2: Disable Debug Data
+
+.fullImage[![Disable Debug Information](img/disable-debug.png)]
+
+???
+
+Attaches information about scopes to DOM elements.
+
+Disable it!
+
+The minified angular disabled Debug info automatically
+
+---
+
+## Simple Tricks 3: Bundle JavaScript
+
+.fullImage[![Too many JS files](img/many-js.png)]
+
+???
+
+Found in the wild
+
+Directives `template` and `templateUrl`
+
+Automatically add template cache or use `template`
+
+---
+
+## Simple Tricks 4: Always use `track by`
+
+.fullImage[![track by](img/track-by.png)]
+
+???
+
+Track by helps avoid angular rebuilding dom nodes when reordering
+
+---
+
+## Simple Tricks 5: Don't duplicate AJAX
+
+.fullImage[![duplicate ajax](img/duplicate-ajax.png)]
+
+???
+
+It is really easy if ajax in watch or using `ng-repeat`
+Maybe easier to do this at the interceptor level or something like memoize.
+What is memoization?
+
+---
+
+## Simple Tricks 6: Limit simultaneous AJAX
+
+.fullImage[![many ajax](img/many-ajax.png)]
+
+---
+
+## Simple Tricks 6 (Cont)
+
+.fullImage[![aggregator](img/aggregator.png)]
+
+---
+
+## Simple Tricks 7: Bocking the event loop
+
+.fullImage[![block event loop](img/block-event-loop.png)]
+
+.fullImage[![Watchers](img/watchers.png)]
+
+???
+
+Been on a website and click something, nothing happens, agin. same. Then 3 happen?
+
+Sneek up on you when services return many results or client says how many.
+
+---
     </textarea>
 
     <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
