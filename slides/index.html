@@ -64,6 +64,9 @@ h1, h2, h3 {
   float: right;
 }
 
+.huge {
+  font-size: 2.5em;
+}
     </style>
   </head>
   <body>
@@ -265,11 +268,229 @@ What is memoization?
 
 ???
 
-Been on a website and click something, nothing happens, agin. same. Then 3 happen?
+Been on a website and click something, nothing happens, again. same. Then 3 happen?
 
-Sneek up on you when services return many results or client says how many.
+Sneak up on you when services return many results or client says how many.
 
 ---
+
+.fullImage[![That's all](img/thats-all.gif)]
+
+???
+
+You may feel like this.
+
+We have more.
+
+Questions?
+
+---
+
+.fullImage[![Blind](img/blind.gif)]
+
+???
+
+I have a question for you. Have you ever done a long jump blind?
+
+What its like to try to improve performance blind.
+
+Need to have some sort of base line.
+
+Manual timing doesn't cut it
+ - one measurement
+ - one machine
+
+Most analytics tools are not build for SPA.
+
+---
+
+.fullImage[![Gmail](img/gmail.png)]
+
+???
+
+Take gmail
+
+Are you confident that your analytics solution provides the time the users actually feels like th page is done?
+
+Let's assume you have a really good one and it works.
+
+What about route changes?
+
+---
+
+.fullImage[![Gmail Stars](img/gmail-starred.png)]
+
+???
+
+Route Changes
+
+Controller instantiated and makes ajax request
+
+Route change complete
+
+---
+
+.fullImage[![Gmail Stars](img/gmail-loading.png)]
+
+???
+
+Does your analytics solution provide this?
+
+We built our own. On the drawing board.
+
+---
+
+.fullImage[![Timeline](img/stabilize.png)]
+
+???
+
+Horizontal Axis is time
+
+Vertical Axis is depth of function calls (pretty much irrelevant)
+
+Does provide stack trace with function names.
+
+---
+
+.fullImage[![Timeline Stabilization](img/stabilize-point.png)]
+
+???
+Digests: watcher
+AJAX: $httpInterceptros
+DOM Mutations: DOM Mutation Observers/DOM Mutation Events
+
+---
+
+class: center
+
+# Route Stabilization
+
+---
+
+.fullImage[![Timeline Stabilization](img/stabilization-graph.png)]
+
+???
+
+This is the top 8 visited pages on our site.
+
+Vertical axis is the time and horizontal axis is the date. Over a week.
+
+Which are the slowest, and by how much, most variation, and much more.
+
+Make decisions and where to spend time.
+
+---
+
+.fullImage[![Performance Regression](img/perf-regression.png)]
+
+???
+
+This was an extra ajax request.
+
+Allows us to see impact on real users, in near real time.
+
+---
+
+.fullImage[![Awesom](img/dancing.gif)]
+
+???
+
+Questions about RS or its purpose?
+
+---
+
+.huge[
+ > ".. about 97% of the time *premature optimization is the root of all evil*." - Donald Knuth
+]
+
+???
+
+Changed my life
+
+Real world problem.
+
+YAGNI
+
+---
+
+class: top
+
+## Performance Improvement Process
+
+&nbsp;
+
+.right-column[
+  ### 1) A real-world problem exists
+]
+
+???
+
+Some business don't benefit from improving performance. B2B.
+
+Make sure there is a business case for it.
+
+Users complaining, evidence to increase your sales
+
+---
+
+class: top
+
+## Performance Improvement Process
+
+&nbsp;
+
+.right-column[
+  ### 1) A real-world problem exists
+  ### 2) Establish a base line
+]
+
+???
+
+Route stabalization
+
+---
+class: top
+
+## Performance Improvement Process
+
+&nbsp;
+
+.right-column[
+  ### 1) A real-world problem exists
+  ### 2) Establish a base line
+  ### 3) Reduce the biggest contributer
+]
+
+???
+
+big stones -> biggest potential improvement
+
+---
+class: top
+
+## Performance Improvement Process
+
+&nbsp;
+
+.right-column[
+  ### 1) A real-world problem exists
+  ### 2) Establish a base line
+  ### 3) Reduce the biggest contributer
+  ### 4) Measure and assess
+]
+
+---
+
+# Workshop
+
+```
+git clone https://github.com/taylor1791/ng-conf-2016-workshop.git
+cd ng-conf-2016-workshop
+npm install
+```
+
+???
+
     </textarea>
 
     <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
