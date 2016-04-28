@@ -1,0 +1,15 @@
+{
+   "id": 10,
+   "headers": {
+      "subject": "Chris Pratt Visit",
+      "from": {
+         "name": "Cave manager",
+         "email": "cave.manager@dinomail.com",
+         "profile": null
+      },
+      "sentDate": 1460021460410
+   },
+   "labels": ["inbox"],
+   "snippet": "Actor Chris Pratt will be visiting our cave this Tuesday. This cave will be the filming location for an upcoming movie. Please take sometime and clean"
+}
+

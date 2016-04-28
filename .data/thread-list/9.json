@@ -1,0 +1,15 @@
+{
+   "id": 9,
+   "headers": {
+      "subject": "Make Mesozoic Masterful!",
+      "from": {
+         "name": "Dinosaur Donald",
+         "email": "no.replay@donald.com",
+         "profile": null
+      },
+      "sentDate": 1460021460410
+   },
+   "labels": ["spam"],
+   "snippet": "The Mesozoic era is comming to an end and we must stop it! Dinosaur Donald will stop rodents from entering our homes by building a"
+}
+

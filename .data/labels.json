@@ -2,8 +2,8 @@
   {
     "id": 1,
     "label": "inbox",
-    "estimatedUnread": 2,
-    "estimatedSize": 24
+    "estimatedUnread": 3,
+    "estimatedSize": 10
   }, {
     "id": 2,
     "label": "starred",
@@ -22,7 +22,7 @@
   }, {
     "id": 5,
     "label": "all mail",
-    "estimatedUnread": 2,
+    "estimatedUnread": 3,
     "estimatedSize": 71
   }, {
     "id": 6,
@@ -32,8 +32,8 @@
   }, {
     "id": 7,
     "label": "spam",
-    "estimatedUnread": 6,
-    "estimatedSize": 6
+    "estimatedUnread": 2,
+    "estimatedSize": 2
   }, {
     "id": 8,
     "label": "trash",

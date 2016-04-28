@@ -1,0 +1,14 @@
+{
+   "id": 3,
+   "headers": {
+      "subject": "No Subject",
+      "from": {
+         "name": "Chicxulub",
+         "email": "chicxulub@mailinator.com",
+         "profile": null
+      },
+      "sentDate": 1457398587363
+   },
+   "labels": ["spam"],
+   "snippet": "I. am. coming."
+}

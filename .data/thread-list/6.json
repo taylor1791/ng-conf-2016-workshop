@@ -1,0 +1,15 @@
+{
+   "id": 6,
+   "headers": {
+      "subject": "FireBox Invoice",
+      "from": {
+         "name": "FireBox",
+         "email": "info@firebox.com",
+         "profile": null
+      },
+      "sentDate": 1458737356930
+   },
+   "labels": ["inbox"],
+   "snippet": "Sales Order Number 362967392 Sales Order Date 4/24/2014 Hatchling Dinosaur Candle: Light will find a way - Melt away the wax egg to reveal an adorable porcelain raptor"
+}
+
