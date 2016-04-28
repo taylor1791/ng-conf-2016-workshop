@@ -10,6 +10,7 @@
       "sentDate": 1458737472491
    },
    "labels": ["inbox"],
+   "unread": false,
    "snippet": "by your ChangeDetection System. For help or to contact a human see the information at the very end of this email"
 }
 

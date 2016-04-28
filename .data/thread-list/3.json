@@ -10,5 +10,6 @@
       "sentDate": 1460021460410
    },
    "labels": ["spam"],
+   "unread": true,
    "snippet": "I. am. coming."
 }
