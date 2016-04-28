@@ -7,6 +7,7 @@ module.exports = function() {
     transclude: true,
     scope: {
       kind: '@',
+      tooltip: '@',
     },
     template: require('./template.html'),
     controller: require('./controller.js'),

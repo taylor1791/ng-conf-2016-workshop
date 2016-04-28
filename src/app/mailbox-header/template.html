@@ -3,14 +3,14 @@
 
   <div class="headerActions">
     <div class="leftHeaderActions">
-      <dm-button>Select All</dm-button>
+      <dm-button tooltip="Select">Select All</dm-button>
 
-      <dm-button class="mailAction" ng-if="!mailboxHeader.selectedEmail()">Refresh</dm-button>
+      <dm-button class="mailAction" ng-if="!mailboxHeader.selectedEmail()" tooltip="Refresh">Refresh</dm-button>
 
       <div class="mailAction" ng-if="mailboxHeader.selectedEmail()">
-        <dm-button kind="left">Archive</dm-button>
-        <dm-button kind="center">Spam</dm-button>
-        <dm-button kind="right">Delete</dm-button>
+        <dm-button kind="left" tooltip="Archive">Archive</dm-button>
+        <dm-button kind="center" tooltip="Report Spam">Spam</dm-button>
+        <dm-button kind="right" tooltip="Delete">Delete</dm-button>
       </div>
 
       <div class="mailAction" ng-if="mailboxHeader.selectedEmail()">

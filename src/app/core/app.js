@@ -4,7 +4,10 @@ var spars = require('./route-stabilization.js');
 var DINO_MAIL = 'dino.mail'
 
 require('normalize.css/normalize.css');
+require('qtip2/dist/jquery.qtip.css');
 require('./style.css');
+
+require('qtip2');
 
 angular.module(DINO_MAIL, [
     require('angular-ui-router'),
