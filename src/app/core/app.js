@@ -15,6 +15,7 @@ angular.module(DINO_MAIL, [
     require('./routes.js'),
     require('./directives.js'),
     require('./services.js'),
+    require('./filters.js'),
   ]);
 
 angular.element(document).ready(function() {
