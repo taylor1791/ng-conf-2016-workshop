@@ -20,13 +20,17 @@
   padding-right: 6px;
 }
 
+.unread .mailFrom {
+  font-weight: bold;
+}
+
 .mailContents {
   padding-left: 16px;
   padding-right: 25px;
   flex-grow: 1;
 }
 
-.mailSubject {
+.unread .mailSubject {
   font-weight: bold;
 }
 
@@ -36,6 +40,10 @@
 
 .mailSent {
   min-width: 80px;
+}
+
+.unread .mailSent {
+  font-weight: bold;
 }
 
 .mailOverflow {

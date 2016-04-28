@@ -1,4 +1,4 @@
-<div class="mailItem">
+<div class="mailItem" ng-class="{unread: mailItem.mail.unread}">
   <div class="mailSelect"> <input type="checkbox" ng-model="mailItem.mail.selected" /> </div>
   <div class="mailStar"> S </div>
   <div class="mailFrom mailOverflow"> {{mailItem.mail.headers.from.name}} </div>
