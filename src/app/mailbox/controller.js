@@ -14,6 +14,7 @@ module.exports = function($scope, $stateParams, EmailState, API) {
       vm.email = email.data;
 
       EmailState.setLabel(label);
+      EmailState.setMail(vm.email);
     });
   };
 

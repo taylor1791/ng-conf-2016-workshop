@@ -30,12 +30,8 @@
   width: 30px;
 }
 
-.mailActions {
+.mailAction {
   margin-left: 16px;
   display: flex;
 }
 
-.manageMailActions {
-  margin-left: 16px;
-  display: flex;
-}

@@ -5,13 +5,15 @@
     <div class="leftHeaderActions">
       <dm-button>Select All</dm-button>
 
-      <div class="mailActions">
+      <dm-button class="mailAction" ng-if="!mailboxHeader.selectedEmail()">Refresh</dm-button>
+
+      <div class="mailAction" ng-if="mailboxHeader.selectedEmail()">
         <dm-button kind="left">Archive</dm-button>
         <dm-button kind="center">Spam</dm-button>
         <dm-button kind="right">Delete</dm-button>
       </div>
 
-      <div class="manageMailActions">
+      <div class="mailAction" ng-if="mailboxHeader.selectedEmail()">
         <dm-button kind="left">Move</dm-button>
         <dm-button kind="right">Label</dm-button>
       </div>

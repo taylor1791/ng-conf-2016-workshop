@@ -4,6 +4,17 @@ module.exports = EmailState;
 function EmailState($rootScope) {
   this.$rootScope = $rootScope;
   this.label = 'INBOX';
+  this.mail = [];
+};
+
+EmailState.prototype.setMail = function(mailList) {
+  var prevMail = this.mail;
+  this.mail = mailList;
+
+  this.$rootScope.$broadcast('EmailSet', {
+    mail: mailList,
+    prevMail: prevMail
+  });
 };
 
 EmailState.prototype.setLabel = function(label) {
@@ -14,5 +25,11 @@ EmailState.prototype.setLabel = function(label) {
     label: label,
     previousLabel: prevLabel,
   });
+};
+
+EmailState.prototype.emailSelected = function() {
+  return this.mail.reduce(function(acc, mail) {
+    return acc + (+(mail.selected || false));
+  }, 0);
 };
 
