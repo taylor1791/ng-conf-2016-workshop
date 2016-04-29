@@ -1,7 +1,7 @@
 // @ngInject
-module.exports = function($element, $scope) {
+module.exports = function($document, $scope) {
   var vm = this;
-  $element.on('keypress', _execExpr);
+  $document.on('keypress', _execExpr);
 
   function _execExpr(e) {
     if (e.keyCode === 13) {

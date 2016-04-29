@@ -1,5 +1,25 @@
 <div class="searchBox">
-  <input type="text" class="searchInput" ng-model="search.filterText" dm-enter="search.applyFilter()" />
+  <div class="searchInputContainer">
+    <input type="text" class="searchInput" ng-model="search.filterText" dm-enter="search.applyFilter()" />
+    <div class="advancedSearch" ng-click="search.toggleAdvanced()"> &#x25BC; </div>
+    <div class="advancedMenu" ng-if="search.showAdvanced">
+      <div class="closeIcon" ng-click="search.toggleAdvanced()"> &#x2715; </div>
+      <label class="searchField">
+        <div>From:</div>
+        <input class="detailSearchInput" ng-model="search.filterFrom" dm-enter="search.applyAdvancedFilter()" />
+      </label>
+      <label class="searchField">
+        <div>Subject:</div>
+        <input class="detailSearchInput" ng-model="search.filterSubject" dm-enter="search.applyAdvancedFilter()" />
+      </label>
+      <label class="searchField">
+        <div>Has the words:</div>
+        <input class="detailSearchInput" ng-model="search.filterBody" dm-enter="search.applyAdvancedFilter()" />
+      </label>
+
+      <button class="searchButton advanced" ng-click="search.applyAdvancedFilter()">Search</button>
+    </div>
+  </div>
   <button class="searchButton" ng-click="search.applyFilter()">Find</button>
 </div>
 
