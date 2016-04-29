@@ -5,6 +5,7 @@ function EmailState($rootScope) {
   this.$rootScope = $rootScope;
   this.label = 'INBOX';
   this.mail = [];
+  this.filter = {headers: {subject: '', from: {name: ''}}, snippet: ''};
 };
 
 EmailState.prototype.setMail = function(mailList) {

@@ -4,6 +4,7 @@ module.exports = function($scope, $stateParams, EmailState, API) {
 
   vm.emails = [];
   vm.label = 'inbox';
+  vm.emailFilter = EmailState.filter;
 
   vm.fetchEmails = function(label) {
     vm.label = label || 'inbox';

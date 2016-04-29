@@ -6,6 +6,8 @@ module.exports = function() {
     restrict: 'E',
     scope: {},
     template: require('./template.html'),
+    controller: require('./controller.js'),
+    controllerAs: 'search',
   };
 }
 

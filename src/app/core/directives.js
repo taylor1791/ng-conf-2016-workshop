@@ -10,5 +10,7 @@ module.exports = function($compileProvider) {
   $compileProvider.directive('dmMailbox', require('../mailbox/directive.js'));
   $compileProvider.directive('dmLabelList', require('../label-list/directive.js'));
   $compileProvider.directive('dmMailItem', require('../mail-item/directive.js'));
+
+  $compileProvider.directive('dmEnter', require('../enter/directive.js'));
 };
 

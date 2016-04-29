@@ -1,5 +1,5 @@
 <div class="searchBox">
-  <input type="text" class="searchInput" />
-  <button class="searchButton">Find</button>
+  <input type="text" class="searchInput" ng-model="search.filterText" dm-enter="search.applyFilter()" />
+  <button class="searchButton" ng-click="search.applyFilter()">Find</button>
 </div>
 

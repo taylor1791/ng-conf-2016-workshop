@@ -3,7 +3,7 @@
   <div class="mailMessage" ng-if="mailbox.showStarredMessage()" ng-switch-when="0"> No starred messages. Have you tried hearts? </div>
   <div class="mailMessage" ng-if="mailbox.showOtherMessage()" ng-switch-when="0"> A clean inbox; some people never see this! </div>
   <dm-mail-item
-    ng-repeat="email in mailbox.email track by email.id"
+    ng-repeat="email in mailbox.email | filter:mailbox.emailFilter track by email.id"
     mail="email"
     ng-switch-default
   ></dm-mail-item>
