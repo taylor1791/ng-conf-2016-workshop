@@ -1,5 +1,6 @@
 dm-button {
   display: flex;
+  height: 100%;
 }
 
 .dmButton {
@@ -12,6 +13,7 @@ dm-button {
   line-height: 100%;
   white-space: nowrap;
   min-width: 70px;
+  height: 30px;
 }
 
 .dmButton:hover {
@@ -53,5 +55,20 @@ dm-button {
   background-image: -webkit-linear-gradient(top,#dd4b39,#c53727);
   box-shadow: 0 1px 1px #cccccc;
   border: 1px solid #b0281a;
+}
+
+.dmButton_action {
+  color: #fff;
+  background: #4387fd;
+  border: 1px solid #4683ea;
+  border-radius: 0 2px 2px 0;
+  font-size: 1em;
+}
+
+.dmButton_action:hover {
+  background: #4387fd;
+  border: 1px solid #4683ea;
+  border-radius: 0 2px 2px 0;
+  cursor: pointer;
 }
 

@@ -3,6 +3,8 @@ module.exports = function($scope, $element, $) {
   var vm = this;
   var btn = $element.find('button');
 
+  $element.addClass(vm.class);
+
   $(btn).qtip(createTooltipOptions(vm.tooltip));
 
   $scope.$watch(

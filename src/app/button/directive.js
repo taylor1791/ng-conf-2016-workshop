@@ -8,6 +8,7 @@ module.exports = function() {
     scope: {
       kind: '@',
       tooltip: '@',
+      class: '@',
     },
     template: require('./template.html'),
     controller: require('./controller.js'),

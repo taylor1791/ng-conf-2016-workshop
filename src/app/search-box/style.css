@@ -16,21 +16,20 @@
 }
 
 .searchButton {
-  color: #fff;
   height: 30px;
-  background: #4387fd;
-  border: 1px solid #4683ea;
-  border-radius: 0 2px 2px 0;
   width: 60px;
   font-size: 1.5rem;
 }
+
 .closeIcon {
   text-align: right;
 }
+
 .advanced {
   font-size: 98%;
   height: 25px;
 }
+
 .advancedSearch {
   position: absolute;
   line-height: 30px;
@@ -39,10 +38,6 @@
   right: 7px;
 }
 
-.advancedSearch:hover {
-  color: #323232;
-  cursor: pointer;
-}
 
 .advancedMenu {
   position: absolute;

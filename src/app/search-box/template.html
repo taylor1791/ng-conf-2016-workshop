@@ -17,9 +17,9 @@
         <input class="detailSearchInput" ng-model="search.filterBody" dm-enter="search.applyAdvancedFilter()" />
       </label>
 
-      <button class="searchButton advanced" ng-click="search.applyAdvancedFilter()">Search</button>
+      <dm-button kind="action" class="searchButton advanced" ng-click="search.applyAdvancedFilter()">Search</dm-button>
     </div>
   </div>
-  <button class="searchButton" ng-click="search.applyFilter()">Find</button>
+  <dm-button kind="action" class="searchButton" ng-click="search.applyFilter()">Find</dm-button>
 </div>
 
