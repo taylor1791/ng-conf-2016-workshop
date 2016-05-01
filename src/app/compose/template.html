@@ -15,7 +15,7 @@
       </div>
 
       <div class="composeBody">
-        <textarea class="emailText" ng-model="compose.body"></textarea>
+        <textarea class="emailText" ng-model="compose.body" ng-change="compose.updatePreview()"></textarea>
       </div>
 
       <div class="composeFoot">
@@ -24,7 +24,5 @@
     </div>
   </div>
 
-  <div class="previewMailColumn">
-    {{compose.body}}
-  </div>
+  <preview-mail-column />
 </div>

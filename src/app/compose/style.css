@@ -73,7 +73,7 @@
   font-size: 0.85em;
 }
 
-.previewMailColumn {
+preview-mail-column {
   flex: 1;
   padding: 5px;
   font-size: 2em;
