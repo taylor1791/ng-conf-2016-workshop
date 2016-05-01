@@ -4,15 +4,15 @@ module.exports = function($stateProvider, $urlRouterProvider, $provide) {
     .state('root', {
       abstract: true,
       url: '',
-      template: '<dm-layout></dm-layout>',
+      template: '<dm-layout />',
     })
 
     .state('root.mail', {
       abstract: true,
       url: '',
       views: {
-        header: {template: '<dm-header></dm-header>'},
-        '': {template: '<dm-mailbox-layout></dm-mailbox-layout>'},
+        header: {template: '<dm-header />'},
+        '': {template: '<dm-mailbox-layout />'},
       },
       resolve: {
         'User': resolveUser,
@@ -22,8 +22,8 @@ module.exports = function($stateProvider, $urlRouterProvider, $provide) {
     .state('root.mail.inbox', {
       url: '/inbox/:label?',
       views: {
-        pageHeader: {template: '<dm-mailbox-header></dm-mailbox-heder>'},
-        '': {template: '<dm-mailbox></dm-mailbox>'},
+        pageHeader: {template: '<dm-mailbox-header />'},
+        '': {template: '<dm-mailbox />'},
       },
       params: {
         label: { value: 'inbox', squash: '' },
