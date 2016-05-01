@@ -26,5 +26,9 @@ module.exports = function ComposeCtrl($element, $rootScope, $compile, User, dmTi
   function _applyDefaultTemplate() {
     vm.body = 'Hello ,\n\n\\- {{user.displayName}} -\n\n---\n{{user.signature}}';
   }
+
+  $element.on('$destroy', function() {
+    previewScope.$destroy();
+  });
 };
 
