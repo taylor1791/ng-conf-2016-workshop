@@ -11,6 +11,14 @@ html {
   font-size: 62.5%;
 }
 
+html, body {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
 .qtip-default {
   border: 1px solid black;
   background-color: #2A2A2A;

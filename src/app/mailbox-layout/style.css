@@ -7,6 +7,7 @@
 
 .pageBody {
   display: flex;
+  height: calc(100% - 51px);
 }
 
 .mailboxLabels {
@@ -24,5 +25,6 @@
 .mailboxBody {
   flex-grow: 1;
   max-width: calc(100% - 200px);
+  height: 100%;
 }
 

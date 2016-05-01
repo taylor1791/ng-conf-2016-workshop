@@ -34,7 +34,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $provide) {
       url: '/compose',
       views: {
         pageHeader: {template: 'Compose Header'},
-        '': {template: '<textarea>My Email</textarea>'},
+        '': {template: '<dm-compose />'},
       },
     });
 

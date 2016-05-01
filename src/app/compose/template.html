@@ -1,0 +1,30 @@
+<div class="composeMailContainer">
+  <div class="composeMailColumn">
+    <div class="composeHeader">
+      <span class="composeTitle"> New Message </span>
+      <span class="composeClose" ui-sref="root.mail.inbox"> &#x2715; </span>
+    </div>
+
+    <div class="composeEditable">
+      <div class="composeField">
+        <input class="composeInput" placeholder="Recipients" ng-model="compose.recipient" />
+      </div>
+
+      <div class="composeField">
+        <input class="composeInput" placeholder="Subject" ng-model="compose.subject" />
+      </div>
+
+      <div class="composeBody">
+        <textarea class="emailText" ng-model="compose.body"></textarea>
+      </div>
+
+      <div class="composeFoot">
+        <dm-button kind="action" class="composeSend" ui-sref="root.mail.inbox">Send</dm-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="previewMailColumn">
+    {{compose.body}}
+  </div>
+</div>
