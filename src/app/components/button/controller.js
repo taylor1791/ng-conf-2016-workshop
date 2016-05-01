@@ -20,6 +20,10 @@ module.exports = function($scope, $element, $) {
       }
     }
   );
+
+  $scope.$on('$destroy', function() {
+    $(btn).qtip('destroy', true);
+  });
 };
 
 function createTooltipOptions(text) {
