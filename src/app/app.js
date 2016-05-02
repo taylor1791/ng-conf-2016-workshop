@@ -15,11 +15,19 @@ angular.module(DINO_MAIL, [
     require('./indexes/directives.js'),
     require('./indexes/services.js'),
     require('./indexes/filters.js'),
-  ]);
+  ])
+  .run(slowdownLoop);
 
 angular.element(document).ready(function() {
   angular.bootstrap(document.getElementById('app'), [DINO_MAIL], {strictDi: true});
 });
+
+// @ngInject
+function slowdownLoop($rootScope) {
+  $rootScope.$watch(function() {
+    for(var i = 0; i < 300000000; i++) {}
+  }, angular.noop);
+}
 
 module.exports = DINO_MAIL;
 
