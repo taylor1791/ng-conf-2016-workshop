@@ -38,6 +38,6 @@ module.exports = function($scope, $stateParams, EmailState, API, $interval) {
 
   $interval(function() {
     vm.fetchEmails($stateParams.label);
-  }, 5000);
+  }, 2500);
 };
 
