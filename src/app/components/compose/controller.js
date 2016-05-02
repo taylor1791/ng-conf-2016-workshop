@@ -7,6 +7,7 @@ module.exports = function ComposeCtrl($element, $rootScope, $compile, User, dmTi
   var vm = this;
   var previewPane = $element.find('preview-mail-column');
   var previewScope = $rootScope.$new();
+  var removeRestoreDefaultTemplate = $rootScope.$on('RestoreDefaultTemplate', _applyDefaultTemplate);
 
   vm.body = '';
 
@@ -21,14 +22,13 @@ module.exports = function ComposeCtrl($element, $rootScope, $compile, User, dmTi
 
   vm.renderPreview();
 
-  $rootScope.$on('RestoreDefaultTemplate', _applyDefaultTemplate);
-
   function _applyDefaultTemplate() {
     vm.body = 'Hello ,\n\n\\- {{user.displayName}} -\n\n---\n{{user.signature}}';
   }
 
   $element.on('$destroy', function() {
     previewScope.$destroy();
+    removeRestoreDefaultTemplate();
   });
 };
 
