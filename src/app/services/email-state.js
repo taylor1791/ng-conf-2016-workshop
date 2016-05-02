@@ -1,7 +1,7 @@
-module.exports = EmailState;
+module.exports = dmEmailState;
 
 // @ngInject
-function EmailState($rootScope) {
+function dmEmailState($rootScope) {
   this.$rootScope = $rootScope;
   this.label = 'INBOX';
   this.mail = [];
@@ -9,7 +9,7 @@ function EmailState($rootScope) {
   this.history = {};
 };
 
-EmailState.prototype.setMail = function(mailList) {
+dmEmailState.prototype.setMail = function(mailList) {
   var prevMail = this.mail;
   this.mail = []
 
@@ -27,7 +27,7 @@ EmailState.prototype.setMail = function(mailList) {
   });
 };
 
-EmailState.prototype.setLabel = function(label) {
+dmEmailState.prototype.setLabel = function(label) {
   var prevLabel = this.currentLabel;
   this.currentLabel = label;
 
@@ -37,7 +37,7 @@ EmailState.prototype.setLabel = function(label) {
   });
 };
 
-EmailState.prototype.emailSelected = function() {
+dmEmailState.prototype.emailSelected = function() {
   return this.mail.reduce(function(acc, mail) {
     return acc + (+(mail.selected || false));
   }, 0);

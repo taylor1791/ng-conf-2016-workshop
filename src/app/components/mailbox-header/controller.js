@@ -1,9 +1,9 @@
 // @ngInject
-module.exports = function MailboxHeaderCtrl($rootScope, EmailState) {
+module.exports = function MailboxHeaderCtrl($rootScope, dmEmailState) {
   var vm = this;
 
   vm.selectedEmail = function() {
-    return EmailState.emailSelected();
+    return dmEmailState.emailSelected();
   };
 
   vm.selectAll = function() {

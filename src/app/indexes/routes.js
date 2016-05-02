@@ -42,8 +42,8 @@ module.exports = function($stateProvider, $urlRouterProvider, $provide) {
     .otherwise('/inbox/');
 
   // @ngInject
-  function resolveUser(API) {
-    return API.getUser().then(function(user) {
+  function resolveUser(dmAPI) {
+    return dmAPI.getUser().then(function(user) {
       $provide.value('User', user.data);
 
       return user.data;

@@ -1,21 +1,21 @@
 // @ngInject
-module.exports = function($scope, $stateParams, EmailState, API, $interval) {
+module.exports = function($scope, $stateParams, dmEmailState, dmAPI, $interval) {
   var vm = this;
 
   vm.emails = [];
   vm.label = 'inbox';
-  vm.emailFilter = EmailState.filter;
+  vm.emailFilter = dmEmailState.filter;
 
   vm.fetchEmails = function(label) {
     vm.label = label || 'inbox';
 
-    var request = vm.label === 'inbox' ? API.getInbox : API.getLabel;
+    var request = vm.label === 'inbox' ? dmAPI.getInbox : dmAPI.getLabel;
 
     request(vm.label).then(function(email) {
-      EmailState.setLabel(label);
-      EmailState.setMail(email.data);
+      dmEmailState.setLabel(label);
+      dmEmailState.setMail(email.data);
 
-      vm.email = EmailState.mail;
+      vm.email = dmEmailState.mail;
     });
   };
 

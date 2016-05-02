@@ -1,5 +1,5 @@
 // @ngInject
-module.exports = function(EmailState) {
+module.exports = function(dmEmailState) {
   var vm = this;
 
   vm.showAdvanced  = false;
@@ -13,12 +13,12 @@ module.exports = function(EmailState) {
   };
 
   vm.applyFilter = function() {
-    EmailState.filter.snippet = vm.filterText;
+    dmEmailState.filter.snippet = vm.filterText;
   };
 
   vm.applyAdvancedFilter = function() {
-    EmailState.filter.snippet = vm.filterBody;
-    EmailState.filter.headers.subject = vm.filterSubject;
-    EmailState.filter.headers.from.name = vm.filterFrom;
+    dmEmailState.filter.snippet = vm.filterBody;
+    dmEmailState.filter.headers.subject = vm.filterSubject;
+    dmEmailState.filter.headers.from.name = vm.filterFrom;
   };
 };

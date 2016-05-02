@@ -1,12 +1,12 @@
 // @ngInject
-module.exports = function($stateParams, $rootScope, API) {
+module.exports = function($stateParams, $rootScope, dmAPI) {
   var vm = this;
 
   vm.showBottom = false;
   vm.top = [];
   vm.bottom = [];
 
-  API.getLabels().then(setLabels);
+  dmAPI.getLabels().then(setLabels);
   setLabel();
 
   vm.showUnread = function(label) {

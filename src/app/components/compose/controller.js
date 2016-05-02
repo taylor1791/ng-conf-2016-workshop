@@ -3,7 +3,7 @@ var marked = require('marked');
 var markedOptions = {sanitize: true};
 
 // @ngInject
-module.exports = function ComposeCtrl($element, $rootScope, $compile, User, TimerUtils) {
+module.exports = function ComposeCtrl($element, $rootScope, $compile, User, dmTimerUtils) {
   var vm = this;
   var previewPane = $element.find('preview-mail-column');
   var previewScope = $rootScope.$new();
@@ -17,7 +17,7 @@ module.exports = function ComposeCtrl($element, $rootScope, $compile, User, Time
     previewPane.append(rendered);
   };
 
-  vm.updatePreview = TimerUtils.debounce(vm.renderPreview, 25);
+  vm.updatePreview = dmTimerUtils.debounce(vm.renderPreview, 25);
 
   vm.renderPreview();
 
