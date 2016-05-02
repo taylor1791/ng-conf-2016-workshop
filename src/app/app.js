@@ -1,5 +1,4 @@
 var angular = require('angular');
-var spars = require('./route-stabilization.js');
 
 var DINO_MAIL = 'dino.mail'
 
@@ -11,11 +10,11 @@ require('qtip2');
 
 angular.module(DINO_MAIL, [
     require('angular-ui-router'),
-    require('./route-stabilization.js'),
-    require('./routes.js'),
-    require('./directives.js'),
-    require('./services.js'),
-    require('./filters.js'),
+    require('./misc/route-stabilization.js'),
+    require('./indexes/routes.js'),
+    require('./indexes/directives.js'),
+    require('./indexes/services.js'),
+    require('./indexes/filters.js'),
   ]);
 
 angular.element(document).ready(function() {
