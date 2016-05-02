@@ -1,5 +1,6 @@
 // @ngInject
 module.exports = function($scope, $stateParams, dmEmailState, dmAPI, $interval) {
+  var refreshTimer;
   var vm = this;
 
   vm.emails = [];
@@ -36,12 +37,16 @@ module.exports = function($scope, $stateParams, dmEmailState, dmAPI, $interval) 
     vm.fetchEmails
   );
 
-  $interval(function() {
+  refreshTimer = $interval(function() {
     vm.fetchEmails($stateParams.label);
   }, 6000);
 
   $scope.$on('RefreshEmail', function() {
     vm.fetchEmails($stateParams.label);
+  });
+
+  $scope.$on('$destroy', function() {
+    $interval.cancel(refreshTimer);
   });
 };
 
