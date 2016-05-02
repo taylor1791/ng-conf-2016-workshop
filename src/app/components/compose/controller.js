@@ -17,7 +17,7 @@ module.exports = function ComposeCtrl($element, $rootScope, $compile, User, dmTi
     previewPane.append(rendered);
   };
 
-  vm.updatePreview = dmTimerUtils.debounce(vm.renderPreview, 25);
+  vm.updatePreview = dmTimerUtils.debounce(vm.renderPreview, 25, false);
 
   vm.renderPreview();
 
