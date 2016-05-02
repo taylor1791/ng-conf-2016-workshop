@@ -1,0 +1,9 @@
+.composeToolHeader {
+  display: flex;
+  height: 100%;
+}
+
+.composeQuickActions {
+  width: 200px;
+}
+

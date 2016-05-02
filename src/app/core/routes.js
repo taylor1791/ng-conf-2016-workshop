@@ -33,7 +33,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $provide) {
     .state('root.mail.compose', {
       url: '/compose',
       views: {
-        pageHeader: {template: 'Compose Header'},
+        pageHeader: {template: '<dm-compose-header />'},
         '': {template: '<dm-compose />'},
       },
     });
