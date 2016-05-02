@@ -9,4 +9,8 @@ module.exports = function MailboxHeaderCtrl($rootScope, EmailState) {
   vm.selectAll = function() {
     $rootScope.$broadcast('SelectEmail');
   };
+
+  vm.refresh = function() {
+    $rootScope.$broadcast('RefreshEmail');
+  };
 };

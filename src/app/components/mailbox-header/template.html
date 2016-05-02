@@ -5,7 +5,7 @@
     <div class="leftHeaderActions">
       <dm-button tooltip="Select" ng-click="mailboxHeader.selectAll()">Select All</dm-button>
 
-      <dm-button class="mailAction" ng-if="!mailboxHeader.selectedEmail()" tooltip="Refresh">Refresh</dm-button>
+      <dm-button class="mailAction" ng-if="!mailboxHeader.selectedEmail()" tooltip="Refresh" ng-click="mailboxHeader.refresh()">Refresh</dm-button>
 
       <div class="mailAction" ng-if="mailboxHeader.selectedEmail()">
         <dm-button kind="left" tooltip="Archive">Archive</dm-button>
