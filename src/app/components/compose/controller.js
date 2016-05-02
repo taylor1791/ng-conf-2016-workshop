@@ -3,20 +3,23 @@ var marked = require('marked');
 var markedOptions = {sanitize: true};
 
 // @ngInject
-module.exports = function ComposeCtrl($element, $rootScope, $compile, User) {
+module.exports = function ComposeCtrl($element, $rootScope, $compile, User, TimerUtils) {
   var vm = this;
   var previewPane = $element.find('preview-mail-column');
   var previewScope = $rootScope.$new();
 
   vm.body = '';
 
-  vm.updatePreview = function() {
+  vm.renderPreview = function() {
     previewScope.user = User;
+    var rendered = $compile(marked(vm.body || 'Email Preview', markedOptions))(previewScope);
     previewPane.empty();
-    previewPane.append($compile(marked(vm.body || 'Email Preview', markedOptions))(previewScope));
+    previewPane.append(rendered);
   };
 
-  vm.updatePreview();
+  vm.updatePreview = TimerUtils.debounce(vm.renderPreview, 25);
+
+  vm.renderPreview();
 
   $rootScope.$on('RestoreDefaultTemplate', _applyDefaultTemplate);
 
