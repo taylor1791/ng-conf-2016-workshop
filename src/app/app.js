@@ -15,12 +15,18 @@ angular.module(DINO_MAIL, [
     require('./indexes/directives.js'),
     require('./indexes/services.js'),
     require('./indexes/filters.js'),
+    appConfig
   ])
   .run(slowdownLoop);
 
 angular.element(document).ready(function() {
   angular.bootstrap(document.getElementById('app'), [DINO_MAIL], {strictDi: true});
 });
+
+// @ngInject
+function appConfig($httpProvider) {
+  $httpProvider.useApplyAsync(true);
+}
 
 // @ngInject
 function slowdownLoop($rootScope) {
