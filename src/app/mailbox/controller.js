@@ -1,5 +1,5 @@
 // @ngInject
-module.exports = function($scope, $stateParams, EmailState, API) {
+module.exports = function($scope, $stateParams, EmailState, API, $interval) {
   var vm = this;
 
   vm.emails = [];
@@ -35,5 +35,9 @@ module.exports = function($scope, $stateParams, EmailState, API) {
     function() { return $stateParams.label; },
     vm.fetchEmails
   );
+
+  $interval(function() {
+    vm.fetchEmails($stateParams.label);
+  }, 5000);
 };
 
