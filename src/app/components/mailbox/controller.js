@@ -12,10 +12,10 @@ module.exports = function($scope, $stateParams, EmailState, API, $interval) {
     var request = vm.label === 'inbox' ? API.getInbox : API.getLabel;
 
     request(vm.label).then(function(email) {
-      vm.email = email.data;
-
       EmailState.setLabel(label);
-      EmailState.setMail(vm.email);
+      EmailState.setMail(email.data);
+
+      vm.email = EmailState.mail;
     });
   };
 

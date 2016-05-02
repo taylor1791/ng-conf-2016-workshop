@@ -6,14 +6,20 @@ function EmailState($rootScope) {
   this.label = 'INBOX';
   this.mail = [];
   this.filter = {headers: {subject: '', from: {name: ''}}, snippet: ''};
-  this.history = [];
+  this.history = {};
 };
 
 EmailState.prototype.setMail = function(mailList) {
   var prevMail = this.mail;
-  this.mail = mailList;
+  this.mail = []
 
-  this.history.push(mailList);
+  mailList.forEach(function(mailItem) {
+    if (!this.history[mailItem.id]) {
+      this.history[mailItem.id] = mailItem;
+    }
+
+    this.mail.push(this.history[mailItem.id]);
+  }, this);
 
   this.$rootScope.$broadcast('EmailSet', {
     mail: mailList,
