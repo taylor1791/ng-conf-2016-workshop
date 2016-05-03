@@ -6,8 +6,16 @@ module.exports = function MailboxHeaderCtrl($rootScope, dmEmailState) {
     return dmEmailState.emailSelected();
   };
 
+  vm.allMailSelected = function() {
+    return dmEmailState.emailSelected() === dmEmailState.mail.length;
+  };
+
   vm.selectAll = function() {
-    $rootScope.$broadcast('SelectEmail');
+    $rootScope.$broadcast('SelectEmail', true);
+  };
+
+  vm.selectNone = function() {
+    $rootScope.$broadcast('SelectEmail', false);
   };
 
   vm.refresh = function() {

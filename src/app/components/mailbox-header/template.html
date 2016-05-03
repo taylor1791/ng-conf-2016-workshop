@@ -3,8 +3,8 @@
 
   <div class="headerActions">
     <div class="leftHeaderActions">
-      <dm-button tooltip="Select" ng-click="mailboxHeader.selectAll()">Select All</dm-button>
-
+      <dm-button tooltip="Select" ng-if="!mailboxHeader.allMailSelected()" ng-click="mailboxHeader.selectAll()">Select All</dm-button>
+      <dm-button tooltip="Deselect" ng-if="mailboxHeader.allMailSelected()" ng-click="mailboxHeader.selectNone()">Select None</dm-button>
       <dm-button class="mailAction" ng-if="!mailboxHeader.selectedEmail()" tooltip="Refresh" ng-click="mailboxHeader.refresh()">Refresh</dm-button>
 
       <div class="mailAction" ng-if="mailboxHeader.selectedEmail()">
