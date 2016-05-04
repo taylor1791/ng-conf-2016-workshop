@@ -1,0 +1,68 @@
+My name is Taylor Everding and I am talking about Identifying and Improving performance bottlenecks in Angular 1 Applications. Later in this Workshop we will be working in a sample application to identify performance bottlenecks and correct them. If you would like to follow along, clone this repo and follow the directions. These directions are available here, in the repro, and will be available before we actually start working in the application.
+
+I'm going to start out by asking a few questions. Can you raise your hand if you've worked on an angular 1 app before?  Keep your hand raised if you have encountered a performance problem on an angular app. Keep your hand raised if you were at least a little bit nervous the first time you have to address the issue. I know the first time I had to address a performance problem I was nervous. I didn't have any understanding of Angular’s internals and I didn't know where to begin. By the end of this talk, I hope you won't be as scared as I was when you encounter problems if you haven't encountered a performance problem and if you have, I hope to give you a few more techniques that you can use to help address them.
+
+There are four things I hope you take from this Workshop. The first is I want to give you a series of tips and tricks that developers of all skill levels can take home and put in the application with minimal effort and Gain a performance benefit. Even if you starting writing angular last month. These tips and tricks will not be covered later in the workshop for various reasons but they're still worth mentioning in this section.
+
+The second goal is I want you to become Comfortable using the developer tools to profile your angular application. Aguilar is a very powerful abstraction from JavaScript, but it is still JavaScript. Everything we know about JavaScript performance still applies and more importantly many things that we learn about angular performance we can apply to JavaScript.
+
+Later on in the workshop we will identify and fix issues in a real application. After doing this enough times I hope that you will start to develop a mental model. This will make it easier for you to identify problems in the future and prevent you from writing them in the first place.
+
+The last goal is extremely difficult and I cannot achieve it by myself. It has to be a conscious choice that you make. I want you to develop a performance attitude. A performance attitude means that you are constantly consider the larger implication of what you are doing and how it will scale without over engineering. When we are developing a feature, it is usually with test data. This is usually a small number of test objects. However, in production users create hundreds sometimes even thousands of these. If we don't think about this then we will always have performance problems and there's nothing we can do about it. By developing a performance attitude you can fix performance problems before they arise. 
+
+Questions?
+
+The first goal is the easiest so let's get that out of the way. The first tip is to always use the latest version of angular. The angular team works hard to make angular as fast as possible and they document their performance improvements in every release in the change log. Here is a screenshot of the changelog of 2 recent releases of angular.  We can see that the section titled Performance Improvements.  In angular the 1.5.5 release, there were two performance improvements. 
+
+$compile: use createMap for directive bindings to allow fast `forEach`.
+ngOptions: use `documentFragment` to populate `select` options.
+
+If you're like me you have no idea what that means without the context of the commit. The great part is, you don't have to understand them to gain the performance benefits.  You can simply upgrade to the latest version and you get them for free. It is worth mentioning that angular 1.3 started following semver to the best of their ability. If they introduce a breaking change, it is discovered quickly, reverted, and a new release is published.
+
+The next trick is to disable angular debug data. Angular attaches information about scopes to DOM nodes and also adds CSS classes to the data bound elements. This information is extremely useful for debugging. Tools such as Baterang, Protractor, and the scope() method of jQuery lite Use this information. The angular docs tell us that we can disable this “for a significant performance boost” using the $compiledProvider. The catch is you only want to disable it in production because you often need that debugging information in development. I would like to mention that you can re-enable it when you do need to debug production using angular.reloadWithDebugInfo.
+
+Most performance problems you encounter will be related to ng-repeat. One way to speed up and you repeat is to always use `track by`.  `track by` allows angular to avoid rebuilding DOM nodes for elements that have already been rendered. This occurs often if elements are reordered. The only catch is the thing you track by has to be unique and sometimes you don't have something that's unique. In these cases, you can use `track by $index`.
+
+The remaining tricks contain anti-examples pulled from webapps I have found online. I have done a little bit of work to anonymize the data to protect the reputation of the web apps. 
+
+So here is a screenshot of the network tab in Chrome. This app had 164 script tags. That means there were 164 JavaScript files requested by the browser. The worst part is the browser has to load these serially. That means the browser has to request the first file, wait for it to download, execute it, and then request the next one. It turns out that this application took 16 seconds to load 2 Megabytes of JavaScript. If you're like me you would find this wait time unacceptable. In fact, this felt so long to me that I thought the website was just the splash screen. 
+
+This is actually a pretty easy fix. All you have to do is to concatenate all of your JavaScript before deploying your application.  However, do not forget that that HTML partials can also contribute to this. You either need to convert your directive and router `templateUrls` to `templates` at build time or used $templateCache to bundle them with your JavaScript. 
+
+If you look very closely at this next example you will see 11 Ajax requests make over 300 milliseconds. If you look even closer you will see that there are only two different request here.  The same data is being requested over 5 times! I know what you're thinking, I would never do this. However, I don't think the people who wrote this wanted to do it either and it ended up slipping it. In fact, it is very easy to have the slip into your application. It usually happens when you ng-repeat over a controller that makes an Ajax request or if you make an Ajax request in a $watch. Both of these make it extremely difficult to fix without major changes to the existing code. One technique that I have found particularly useful is to memoize pening promises. This means if a function returns a promise and the promise is still pending when the function is invoked a second time with the same arguments then return that original pending promise. 
+
+Here we have yet another application. This one makes 23 Ajax requests on application load.  Most modern browsers can only make 6 Ajax requests simultaneously per domain. Unfortunately this can slow down the app and you can't just go and rewrite a REST service to deliver everything in one payload. That makes this a challenging problem. One particularly innovative technique is to create an aggregator service. An aggregator service accepts a list of Ajax requests to make, makes them on behalf of the client in parallel, and retukrns the data to the client. This may not seem like it would help, but the server doesn't have a limitation on the number of simultaneous Ajax requests it can make per domain. This can greatly improve performance the cost of a higher payload size.
+
+The last tip I have for you is not to block the event loop.  JavaScript is single-threaded and everything happens in the same event Loop. If a process blocks the event group, all other parts of the application have to wait until it's done. If you never been on a website, click the button and nothing happened, clicked again  and had the thing happen twice this is probably the cause. no one ever does this on purpose. It's always sneaks up on you.  sometimes this happens because you have too many Watchers, other times your watches are too complex. Either way, you have to watch for this. I was working with an application and the browser locked up on me.  Eventually I saw the following in the console, Digest cycle took 188250 milliseconds. That is right,  a single digest took 188 seconds.  I don't know a single place where this is acceptable even with dial-up.
+
+Some of you may be feeling like this right now. That's okay, because those are things you can get for very little cost. There's a lot more things we can do that we will cover later in the workshop.
+
+Questions?
+
+I have a question for you, have you ever tried to do a long jump blind? That is exactly what it is like trying to improve performance when you don't have an adequate way to measure improvement from your users perspective. The best way to do that is to establish baseline performance, many people will try to manual time it. That is not good enough because it's one measurement on one machine at one particular point in time. Furthermore, just because the performance improves on your machine, doesn't mean it made a significant impact for users. It gets worst. Most analytic tools are not built for single page applications. Take Gmail for example.
+
+Are you confident that your analytics solution provides how much time passes before the user can actually interact with the email and not sometime during this loading bar? Let's assume you had a really good analytics solution and it gets this one correct. Does it work for route changes?
+
+When you click on a link, angular changes the route and instantiates your controller which often make Ajax requests. We usually tell the user the page is “loading” at this point. When the request complete the page is finally done loading. That is the time we want. The problem is, that I don’t know of a solution that reports this kind of timing. Let's think about what one would look like.
+
+Here is a profile of a complex web application. The horizontal axis is time and vertical axis is the depth of function calls. We can pretty much ignore this for now. We can see where the application loads and additional Ajax requests. Now, when is the application done loading? 
+
+Here. This is the point we want. What is everything that happens until that point? Well, there are digests that occur. We can track those with watchers. There are Ajax requests, which we can track with http interceptors, and there DOM mutations which we can track with mutation observers or mutation events. Combined these things and we have route stabilization.
+
+This lets us do some amazing things. Here is a graph of the top 8 visited pages on an application. Here we have timing information for a week in November. The vertical axis is the page route stabilization time. We can now easily see which pages are the slowest and by how much Which pages have the most variation and by how much. Any other crazy thing data scientists or statisticians come with. This allows us to decide where to spend our time to get the most benefit.
+
+One of the most exciting things is that we can actually detect the introduction of performance bottlenecks. Somewhere in the middle of the page, load time significantly increase. If you didn't have Route Stabiliazation, this is extremely difficult to detect. Now you can detect it at a glance, programmatically, and in real time.
+
+This awesome. 
+
+Questions about Route Stabilization or its purpose?
+
+When I was a younger developer there was one quote that change the way I thought when developing.  It hat is a quote by Donald Knuth. “...  about 97% of the time premature optimization is the root of all evil.” This quote encompasses many processes of software development. Most of the time, any micro-optimization you can perform, won't help.
+
+Before you go about improving performance,  you have to make sure that a real world problem exists. This can be established many different ways. Maybe the users are complaining or maybe you have evidence to show that increasing performance will increase your sales. Whatever it is you have to make sure there is a business case to improve performance.
+
+Second you have to establish a Baseline. This is where route stabilization comes in.  this will allow us to know that any change you make actually has a significant impact on users. 
+
+Identify the biggest bottleneck in the application and try to reduce it. We always select the biggest contributor because it has the biggest room for improvement. Making a 30% Improvement on 1 millisecond is not noticeable by users, but making a 30% Improvement on one second is noticeable by users.
+
+Finally, once you fix an issue we measure and assess. We need to know if the changes are good enough yet. If not, then we go back and start the process all over again.  I say good enough because performance Improvement the game with diminishing returns. at some point the investment to reduce the bottlenecks cost more than they're worth.  and they wanted to make sure we never get into that range.
