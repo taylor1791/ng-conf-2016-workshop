@@ -25,7 +25,7 @@ angular.element(document).ready(function() {
 // @ngInject
 function slowdownLoop($rootScope) {
   $rootScope.$watch(function() {
-    for(var i = 0; i < 300000000; i++) {}
+    for(var i = 0; i < 175000000; i++) {}
   }, angular.noop);
 }
 

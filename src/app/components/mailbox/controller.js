@@ -38,7 +38,7 @@ module.exports = function($scope, $stateParams, dmEmailState, dmAPI, $interval) 
 
   $interval(function() {
     vm.fetchEmails($stateParams.label);
-  }, 2500);
+  }, 6000);
 
   $scope.$on('RefreshEmail', function() {
     vm.fetchEmails($stateParams.label);
