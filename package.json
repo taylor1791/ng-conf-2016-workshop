@@ -36,7 +36,7 @@
   "dependencies": {
     "angular": "^1.5.0",
     "angular-ui-router": "^0.2.18",
-    "jQuery": "^1.7.4",
+    "jquery": "^2.2.3",
     "marked": "^0.3.5",
     "moment": "^2.13.0",
     "normalize.css": "^3.0.3",
